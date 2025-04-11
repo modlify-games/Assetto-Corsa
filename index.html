@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Download Assetto Corsa Mobile - Experience realistic racing on your smartphone. Get it now on Android and iOS.">
-    <meta name="keywords" content="Assetto Corsa, racing games, mobile games, modlify.fun, download games">
+    <meta name="keywords" content="Assetto Corsa Mobile, racing games, mobile games, modlify.fun, download games">
     <meta property="og:title" content="Assetto Corsa Mobile - Modlify.fun">
     <meta property="og:description" content="Download the latest modded version of Assetto Corsa Mobile. Enjoy realistic racing physics and stunning graphics on your smartphone.">
     <meta property="og:image" content="https://i.ibb.co/1J9S58W1/b4.jpg">
@@ -201,6 +201,61 @@
             font-size: 0.8rem;
         }
 
+        /* Installation Guide Styles */
+        .installation {
+            margin: 20px 0;
+        }
+
+        .installation h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .install-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .install-tab {
+            padding: 8px 16px;
+            background: var(--dark);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .install-tab.active {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .install-content {
+            background: var(--dark);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .install-steps {
+            list-style: none;
+        }
+
+        .install-steps li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .install-steps li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
         .features {
             margin: 20px 0;
         }
@@ -352,6 +407,85 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .install-tabs {
+                flex-direction: column;
+            }
+        }
+
+        /* Cookie Consent Styles */
+        .cookie-consent {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 600px;
+            width: 90%;
+            background: rgba(30, 30, 30, 0.95);
+            color: var(--text);
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            display: none;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .cookie-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .cookie-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .cookie-text a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .cookie-text a:hover {
+            text-decoration: underline;
+        }
+
+        .accept-btn {
+            padding: 8px 20px;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .accept-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .accept-btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -375,13 +509,13 @@
 
     <!-- Hero Section -->
     <div class="hero">
-        <img src="https://i.ibb.co/1J9S58W1/b4.jpg" alt="Assetto Corsa Cover">
+        <img src="https://i.ibb.co/1J9S58W1/b4.jpg" alt="Assetto Corsa Mobile Cover">
     </div>
 
     <!-- Game Info Section -->
     <div class="container">
         <div class="game-info">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsv7-mEL1UXJbWJNZMtkffQzMXXZWYoOD8zw&s" alt="Assetto Corsa Logo" class="game-icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsv7-mEL1UXJbWJNZMtkffQzMXXZWYoOD8zw&s" alt="Assetto Corsa Mobile Logo" class="game-icon">
             <div class="game-details">
                 <h1>Assetto Corsa Mobile</h1>
                 <small>For Android and iOS</small>
@@ -418,14 +552,34 @@
             </div>
         </div>
 
+        <!-- Installation Guide -->
+        <div class="installation">
+            <h2>Installation Guide</h2>
+            <div class="install-tabs">
+                <div class="install-tab active">Android</div>
+                <div class="install-tab">iOS</div>
+            </div>
+            <div class="install-content">
+                <ul class="install-steps">
+                    <li>Download the APK file for Android or IPA file for iOS</li>
+                    <li>Enable "Install from Unknown Sources" in your device settings (Android only)</li>
+                    <li>Open the downloaded file</li>
+                    <li>Follow the installation prompts</li>
+                    <li>Once installed, launch the game</li>
+                    <li>Wait for additional resources to download</li>
+                    <li>Enjoy your game!</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Features Section -->
         <div class="features">
             <h2>Features</h2>
             <ul class="feature-list">
-                <li>Realistic Racing Physics: Experience true-to-life driving dynamics.</li>
-                <li>High-End Graphics: Stunning visuals optimized for mobile devices.</li>
-                <li>Multiplayer Mode: Compete with friends or players worldwide.</li>
-                <li>Regular Updates: New cars, tracks, and features added regularly.</li>
+                <li>Realistic Physics: Advanced physics engine for authentic driving experience</li>
+                <li>Official Licensed Cars: Drive accurately reproduced cars from major manufacturers</li>
+                <li>Dynamic Weather: Real-time weather conditions that affect driving</li>
+                <li>Multiplayer Mode: Race against players worldwide in real-time</li>
             </ul>
         </div>
 
@@ -435,6 +589,7 @@
             <div class="screenshot-grid">
                 <img src="https://i.ibb.co/PszWhydh/b5.jpg" alt="Screenshot 1" class="screenshot">
                 <img src="https://i.ibb.co/1J9S58W1/b4.jpg" alt="Screenshot 2" class="screenshot">
+                <img src="https://i.ibb.co/6XKqJ4R/b3.jpg" alt="Screenshot 3" class="screenshot">
             </div>
         </div>
     </div>
@@ -483,46 +638,118 @@
         </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <p class="cookie-text">
+                We use cookies to provide our free download service. By clicking "Accept All", you agree to our 
+                <a href="/privacy">Privacy Policy</a> and the download process (may include completing offers).
+            </p>
+            <button id="acceptAll" class="accept-btn">Accept All</button>
+        </div>
+    </div>
+
     <!-- AdBlueMedia Script -->
     <script type="text/javascript">
         var beYaO_hzP_szYQUc = {"it": 4455972, "key": "5c9ff"};
     </script>
     <script src="https://d29gqhzevia104.cloudfront.net/7c3ff43.js"></script>
     <script>
-        // Toggle Mobile Menu
-        document.getElementById('menuIcon').addEventListener('click', function() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        });
+        // Cookie Consent Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptAll = document.getElementById('acceptAll');
+            
+            // Only show if not already accepted
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookieConsent.style.display = 'block';
+                }, 1000);
+            }
+            
+            // Accept all cookies
+            acceptAll.addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieConsent.style.display = 'none';
+            });
 
-        // Swipeable Screenshots
-        const screenshotGrid = document.querySelector('.screenshot-grid');
-        let isDragging = false;
-        let startX, scrollLeft;
+            // Toggle Mobile Menu
+            document.getElementById('menuIcon').addEventListener('click', function() {
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.toggle('active');
+            });
 
-        screenshotGrid.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - screenshotGrid.offsetLeft;
-            scrollLeft = screenshotGrid.scrollLeft;
-        });
+            // Swipeable Screenshots
+            const screenshotGrid = document.querySelector('.screenshot-grid');
+            let isDragging = false;
+            let startX, scrollLeft;
 
-        screenshotGrid.addEventListener('mouseleave', () => {
-            isDragging = false;
-        });
+            screenshotGrid.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.pageX - screenshotGrid.offsetLeft;
+                scrollLeft = screenshotGrid.scrollLeft;
+            });
 
-        screenshotGrid.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
+            screenshotGrid.addEventListener('mouseleave', () => {
+                isDragging = false;
+            });
 
-        screenshotGrid.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - screenshotGrid.offsetLeft;
-            const walk = (x - startX) * 2;
-            screenshotGrid.scrollLeft = scrollLeft - walk;
+            screenshotGrid.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            screenshotGrid.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - screenshotGrid.offsetLeft;
+                const walk = (x - startX) * 2;
+                screenshotGrid.scrollLeft = scrollLeft - walk;
+            });
+
+            // Installation Guide Tabs
+            const tabs = document.querySelectorAll('.install-tab');
+            const content = document.querySelector('.install-content');
+
+            const androidSteps = `
+                <ul class="install-steps">
+                    <li>Download the APK file for Android</li>
+                    <li>Enable "Install from Unknown Sources" in your device settings</li>
+                    <li>Open the downloaded file</li>
+                    <li>Follow the installation prompts</li>
+                    <li>Once installed, launch the game</li>
+                    <li>Wait for additional resources to download</li>
+                    <li>Enjoy your game!</li>
+                </ul>
+            `;
+
+            const iosSteps = `
+                <ul class="install-steps">
+                    <li>Download the IPA file for iOS</li>
+                    <li>Install using a trusted third-party app (e.g., AltStore)</li>
+                    <li>Trust the developer profile in Settings</li>
+                    <li>Launch the game</li>
+                    <li>Wait for additional resources to download</li>
+                    <li>Enjoy your game!</li>
+                </ul>
+            `;
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    content.innerHTML = index === 0 ? androidSteps : iosSteps;
+                });
+            });
         });
 
         function showContentLocker(platform) {
+            // Check if accepted
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookieConsent').style.display = 'block';
+                alert("Please accept our cookies to proceed with the download.");
+                return;
+            }
+            
             // Proceed with the offer
             if (platform === 'android') {
                 _Pg();
